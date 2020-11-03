@@ -44,3 +44,37 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Auth0 Notes
+
+# Scopes
+
+- Auth0 has Scopes, which are essentially a system of permissions
+- These scopes should be displayed in the consent UI, typically displayed to the user when first creating an account
+
+# Tokens
+
+- Tokens can take many forms (WS-Federated, SAML, JWT, Custom stuff, etc...)
+- This app focues on JWT
+
+## Access Tokens
+
+- Gives you access to a resource
+- Controls access to your API
+- Short lived
+
+# Refresh Tokens
+
+- Enables you to get a new token
+- Long lived
+- Can be revoked
+
+# JWT (JSON Web Token)
+
+- Most modern applications use JWT
+- It has the following parts:
+  1. Header - Describes the token. Such as this is the algorithm I'm using for the signature and this is the type of token I am
+  2. Payload - Has multiple properties such as a subscriber ID, name, access level, expiration date, issuer
+  3. Signature - Ensures integrity of our JWT
+- These JSON Web Token parts are Base64 encoded with all three concatanated with a dot and turned into a string so it can easily be passed around.
+- Can easily be decoded using online decoder
